@@ -150,5 +150,3 @@ const factsData = [
         text: "Footprints left by Apollo astronauts can remain on the Moon for millions of years."
     }
 ];
-
-export default factsData;   
