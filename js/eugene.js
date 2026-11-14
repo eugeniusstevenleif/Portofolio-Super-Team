@@ -1,5 +1,3 @@
-import factsData from "./factsData.js";
-
 // ========== MODAL THINGS ==========
 const modal = document.querySelector(".modal");
 

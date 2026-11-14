@@ -31,7 +31,7 @@ body{
             rgba(16, 42, 67, 0.58),
             rgba(8, 25, 43, 0.85)
         ),
-        url("../assets/eugene/background.png");
+        url("../assets/background.png");
 
     background-size: cover;
     background-position: center;
