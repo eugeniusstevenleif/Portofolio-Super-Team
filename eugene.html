@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +8,72 @@
     <title>Eugene Portofolio</title>
 </head>
 <body>
-    <h1>Portofolio Saya</h1>
-    <p>Nama: Eugenius Steven Leif</p>
-    <div>
-        <img src="../assets/leopard.webp" alt="leopard">
-    </div>
-    <h2>Hobi</h2>
-    <ul> 
-        <li>Bermain Game</li>
-    </ul>
-    <h2>Keahlian</h2>
-    <ul> 
-        <li>Bahasa Inggris</li>
-        <li>Bahasa Java</li>
-        <li>Bahasa Javascript</li>
-        <li>Springboot</li>
-    </ul>
-    <h2>Aktivitas Terakhir</h2>
-    <div>
-        <div>
-            <img src="./assets/sleep.webp" alt="tidur">
-            <span>Tidur</span>
+    <header>
+        <h1 class="reveal">Welcome to My Portofolio</h1>
+    </header>
+    <section id="hero" class="reveal">
+        <div class="hero-left">
+            <div class="hero-img-container">
+                <img src="./assets/leopard.webp" alt="leopard" class="hero-img">
+                <span>Eugenius Steven Leif</span>
+            </div>
         </div>
-        <div>
-            <img src="./assets/windutbarusadar.png" alt="windah">
-            <span>Menonton Youtube</span>
+
+        <div class="hero-right">
+            <h2>Hi nama saya Eugenius Steven Leif</h2>
+            <p>Saya adalah mahasiswa dari Universitas Katolik Parahyangan, </p>
+            <p>jurusan informatika</p>
+            <div>
+                <ul> 
+                    <h2>Hobi</h2>
+                    <li>Bermain Game</li>
+                    <li>Menonton film</li>
+                </ul>
+                <ul> 
+                    <h2>Keahlian</h2>
+                    <li>Bahasa Inggris</li>
+                    <li>Java</li>
+                    <li>Javascript</li>
+                    <li>Springboot</li>
+                    <li>TypeScript</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="activity-contents">
+        <h2>Aktivitas Terakhir</h2>
+        <div class="activity-grid">
+            <div class="card reveal">
+                <img class="background" src="./assets/sleep.jpg" alt="tidur">
+                <img class="foreground" src="./assets/sleep.jpg" alt="tidur">
+                <p>Tidur</p>
+            </div>
+            <div class="card reveal">
+                <img class="background" src="./assets/windutbarusadar.png" alt="windah">
+                <img class="foreground" src="./assets/windutbarusadar.png" alt="windah">
+                <p>Menonton Youtube</p>
+            </div>
+            <div class="card reveal">
+                <img class="background" src="./assets/spotify.png" alt="spotify">
+                <img class="foreground" src="./assets/spotify.png" alt="spotify">
+                <p>Mendengarkan musik</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactions">
+        <div class="facts-generator">
+            <input id="generete-facts" class="reveal" type="button" value="Get Random Facts">
+        </div>
+    </section>
+    
+    <div class="modal">
+        <div class="card">
+            <span id="close">&times;</span>
+            <h2>Facts</h2>
+            <h4>Category: <span>Science</span></h4>
+            <p>Text</p>
         </div>
     </div>
 </body>
