@@ -1,0 +1,167 @@
+/* Mengatur tampilan dasar seluruh halaman supaya kartu berada tepat di tengah layar */
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+                color: #1e293b;
+                margin: 0;
+                padding: 30px 15px;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+            }
+
+            /* Membungkus seluruh isi portofolio menjadi kartu putih yang rapi dengan bayangan lembut */
+            .portfolio-card {
+                background-color: #ffffff;
+                width: 100%;
+                max-width: 540px;
+                padding: 36px 32px;
+                border-radius: 20px;
+                box-shadow: 0 12px 32px rgba(30, 41, 59, 0.1);
+                border: 1px solid #e2e8f0;
+            }
+
+            /* Menghilangkan bullet bawaan list utama dan menyusun item profil secara vertikal di tengah */
+            .profile-info {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Memindahkan posisi foto profil ke urutan paling atas tanpa perlu mengubah baris HTML */
+            .profile-pic-container {
+                order: -1;
+                margin-bottom: 16px;
+            }
+
+            /* Membuat foto profil bulat sempurna, proporsional, dan memiliki bingkai (border) */
+            .profile-pic {
+                width: 145px;
+                height: 145px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid #4f46e5;
+                box-shadow: 0 6px 18px rgba(79, 70, 229, 0.25);
+                transition: transform 0.3s ease;
+            }
+
+            /* Memberi efek sedikit membesar saat kursor diarahkan ke foto profil */
+            .profile-pic:hover {
+                transform: scale(1.05);
+            }
+
+            /* Mempertegas tampilan nama sebagai judul utama portofolio */
+            .profile-name {
+                font-size: 1.45rem;
+                font-weight: 700;
+                color: #0f172a;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            /* Mengubah baris hobi menjadi lencana (pill badge) berwarna lembut */
+            .profile-hobby {
+                background-color: #eef2ff;
+                color: #4338ca;
+                font-size: 0.92rem;
+                font-weight: 600;
+                padding: 6px 18px;
+                border-radius: 999px;
+                margin-bottom: 24px;
+            }
+
+            /* Mengatur wadah bagian keahlian dengan garis pemisah halus di bagian atas */
+            .profile-skills {
+                width: 100%;
+                border-top: 1px solid #e2e8f0;
+                padding-top: 18px;
+                font-weight: 700;
+                font-size: 1rem;
+                color: #334155;
+            }
+
+            /* Menyusun daftar keahlian (nested ul) menjadi deretan tag horizontal yang rapi */
+            .skills-list {
+                list-style: none;
+                padding: 0;
+                margin-top: 12px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            /* Mendesain setiap item keahlian agar terlihat seperti tombol/tag modern */
+            .skills-list li {
+                background-color: #f8fafc;
+                color: #1e293b;
+                border: 1px solid #cbd5e1;
+                padding: 7px 15px;
+                border-radius: 10px;
+                font-size: 0.88rem;
+                font-weight: 600;
+                transition: all 0.2s ease;
+            }
+
+            /* Memberi perubahan warna saat item keahlian disentuh kursor */
+            .skills-list li:hover {
+                background-color: #4f46e5;
+                color: #ffffff;
+                border-color: #4f46e5;
+                transform: translateY(-2px);
+            }
+
+            /* Mengatur judul bagian 'Aktifitas Terakhir' agar selaras dengan bagian keahlian */
+            .section-title {
+                border-top: 1px solid #e2e8f0;
+                padding-top: 18px;
+                margin: 22px 0 14px 0;
+                font-weight: 700;
+                font-size: 1rem;
+                color: #334155;
+            }
+
+            /* Mengubah daftar bernomor (<ol>) menjadi tata letak Grid 3 kolom sejajar */
+            .activity-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+            }
+
+            /* Membalik susunan dalam kartu aktivitas agar gambar berada di atas teks keterangan */
+            .activity-item {
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #334155;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            /* Memberi efek kartu terangkat ringan saat kursor diarahkan ke item aktivitas */
+            .activity-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+            }
+
+            /* Menyeragamkan ukuran semua gambar aktivitas agar rapi dan tidak berantakan */
+            .activity-img {
+                width: 100%;
+                height: 85px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 8px;
+            }
