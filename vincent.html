@@ -3,6 +3,14 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Vincent - Portofolio</title>
+        <style>
+            /* Crop foto aktivitas terbaru jadi 1:1, ambil bagian atas */
+            #aktivitas-img {
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                object-position: top center;
+            }
+        </style>
     </head>
     <body>
         <p><a href="index.html">Balik</a></p>
@@ -25,6 +33,20 @@
 
         <h2>Aktivitas Terbaru</h2>
         <p>Begadang demi menyelesaikan tubes AI</p>
-        <img src="assets/vincentbegadang.jpg"/>
+        <img id="aktivitas-img" src="assets/vincentbegadang.jpg"/>
+
+        <button id="petrig-btn">Ganti Background</button>
+
+        <script>
+            const petrigBtn = document.getElementById("petrig-btn");
+
+            petrigBtn.addEventListener("click", function () {
+                document.body.style.backgroundImage = "url('assets/petrig.jpg')";
+                document.body.style.backgroundSize = "cover";
+                document.body.style.backgroundPosition = "center";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundAttachment = "fixed";
+            });
+        </script>
     </body>
 </html>
