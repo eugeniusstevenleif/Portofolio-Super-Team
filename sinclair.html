@@ -1,28 +1,90 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Sinclair Portofolio</title>
-        <link rel="stylesheet" href="css/csssinclair.css">
-    </head>
-    <body>
-        <div class="portfolio-card">
-            <ul class="profile-info">
-                <li class="profile-name">Nama : Sinclair Gisselle Icarus Butarbutar</li>
-                <li class="profile-pic-container"><img src = "assets/ganteng.jpg" class="profile-pic"></li>
-                <li class="profile-hobby">Hobi : Bermain Video Game</li>
-                <li class="profile-skills">Keahlian : <ul class="skills-list">
-                    <li>Bahasa Ingris</li>
-                    <li>Bahasa Java</li>
-                    <li>Springboot</li>
-                </ul></li>
-            </ul>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinclair Portofolio</title>
+    <link rel = "stylesheet" href="css/csssinclair.css">
+    <script src="js/sinclair.js" defer></script>
 
-            <p class="section-title">Aktifitas Terakhir</p>
-            <ol class="activity-list">
-                <li class="activity-item">Tidur <img src = "assets/tidurnyenyak.jpg" class="activity-img"> </li>
-                <li class="activity-item">Makan <img src = "assets/orangmakan.jpg" class="activity-img"></li>
-                <li class="activity-item">Belajar <img src = "assets/orangbelajar.jpg" class="activity-img"></li>
-            </ol>
+</head>
+<body>
+    <!-- Layer cahaya interaktif yang ngikutin posisi mouse -->
+    <div class="bg-spotlight" id="bgSpotlight"></div>
+
+    <div class="portfolio-card">
+        <!-- Tombol-tombol interaksi di bagian atas -->
+        <div class="top-controls">
+            <button class="btn-action btn-theme" onclick="gantiTemaBackground()">🎨 Ganti Background</button>
+            <button class="btn-action btn-surprise" onclick="bukaSurpriseModal()">🎁 Tombol Surprise!</button>
         </div>
-    </body>
+
+        <ul class="profile-info">
+            <li class="profile-name">Nama : Sinclair Gisselle</li>
+            <li class="profile-pic-container"><img src="assets/ganteng.jpg" alt="Foto Profil" class="profile-pic"></li>
+            <li class="profile-hobby">Hobi : Bermain Video Game</li>
+
+            <!-- Fitur b: Animasi Pet-Pet Kesukaan -->
+            <div class="pet-box" id="petContainer">
+                <div>
+                    <div style="font-weight: 700; font-size: 0.92rem;">Pet Kesayangan: Mochi 🐾</div>
+                    <div id="petStatusText" style="font-size: 0.8rem; color: var(--text-sub); margin-top: 2px;">
+                        Klik kucingnya buat ngelus! (Mood: Santai)
+                    </div>
+                </div>
+                <div class="pet-avatar" id="petAvatar" onclick="elusPet()">🐱</div>
+            </div>
+
+            <!-- Fitur c: Grafik Skill dengan Persentase -->
+            <li class="profile-skills">
+                <div class="skills-header">
+                    <span>Grafik Keahlian :</span>
+                    <button class="btn-action btn-theme" style="padding: 4px 10px; font-size: 0.78rem;" onclick="animasiGrafikSkill()">🔄 Ulangi Animasi</button>
+                </div>
+                <ul class="skills-list" id="skillsContainer">
+                    <li class="skill-item" data-percent="100">
+                        <div class="skill-label-row">
+                            <span>Bahasa Inggris</span>
+                            <span class="skill-percent-text">0%</span>
+                        </div>
+                        <div class="progress-track"><div class="progress-fill"></div></div>
+                    </li>
+                    <li class="skill-item" data-percent="94">
+                        <div class="skill-label-row">
+                            <span>Bahasa Java</span>
+                            <span class="skill-percent-text">0%</span>
+                        </div>
+                        <div class="progress-track"><div class="progress-fill"></div></div>
+                    </li>
+                    <li class="skill-item" data-percent="50">
+                        <div class="skill-label-row">
+                            <span>Springboot</span>
+                            <span class="skill-percent-text">0%</span>
+                        </div>
+                        <div class="progress-track"><div class="progress-fill"></div></div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <p class="section-title">Aktifitas Terakhir</p>
+        <ol class="activity-list">
+            <li class="activity-item">Tidur <img src="assets/tidurnyenyak.jpg" alt="Tidur" class="activity-img"></li>
+            <li class="activity-item">Makan <img src="assets/orangmakan.jpg" alt="Makan" class="activity-img"></li>
+            <li class="activity-item">Belajar <img src="assets/orangbelajar.jpg" alt="Belajar" class="activity-img"></li>
+        </ol>
+    </div>
+
+    <!-- Fitur a: Pop-up Window Surprise Random -->
+    <div class="modal-overlay" id="surpriseModal" onclick="tutupSurpriseModal(event)">
+        <div class="modal-box">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;" id="surpriseEmoji">🎉</div>
+            <h3 style="margin: 0 0 10px 0;">Fakta Rahasia Sinclair!</h3>
+            <p id="surpriseText" style="font-size: 0.95rem; line-height: 1.5; color: var(--text-sub); margin-bottom: 20px;">
+                Memuat kejutan...
+            </p>
+            <button class="btn-action btn-surprise" onclick="tutupSurpriseModal(event, true)">Tutup Kejutan ✨</button>
+        </div>
+    </div>
+</body>
 </html>
